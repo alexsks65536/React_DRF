@@ -1,1 +1,1 @@
-# Django-base
+Основы Django Framework
