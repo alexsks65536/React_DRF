@@ -3,9 +3,9 @@ from django.shortcuts import render
 # Create your views here.
 
 menu_links = [
-    {'href': '/', 'name': 'домой'},
-    {'href': '/products', 'name': 'продукты'},
-    {'href': '/contact', 'name': 'контакты'},
+    {'href': 'index', 'name': 'домой'},
+    {'href': 'products', 'name': 'продукты'},
+    {'href': 'contact', 'name': 'контакты'},
 ]
 
 def main(request):
@@ -25,8 +25,14 @@ def products(request):
         {'href': '#', 'name': 'классика'},
     ]
 
+    list_products = [
+        {'pic_product': '../static/img/product-11.jpg', 'title_product': 'Стул повышенного качества', 'desc_product': 'Не оторваться'},
+        {'pic_product': '../static/img/product-21.jpg', 'title_product': 'Удобное кресло', 'desc_product': 'оторваться по полной'},
+        {'pic_product': '../static/img/product-31.jpg', 'title_product': 'Стул для игр', 'desc_product': 'Отдохнуть и поспать'},
+    ]
+
     return render(request, 'mainapp/products.html', context={
-        'menu_links': menu_links, 'menu_products': menu_products,
+        'menu_links': menu_links, 'menu_products': menu_products, 'list_products': list_products,
     })
 
 
